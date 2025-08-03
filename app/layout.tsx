@@ -1,6 +1,6 @@
-import "/styles/globals.css";
+import "@/styles/globals.css";
 import { Metadata } from "next";
-import { Providers } from "./providers";
+import { Providers } from "@/app/providers";
 import { Poppins, Lora } from "next/font/google";
 import clsx from "clsx";
 

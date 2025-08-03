@@ -3,9 +3,9 @@
 import React, { ReactNode } from "react";
 import { Button, Card, CardBody, Image, Link } from "@nextui-org/react";
 import { FaBookOpen, FaChalkboardTeacher, FaFeatherAlt, FaLightbulb, FaCheckCircle } from "react-icons/fa";
-import GeguritanImage from "../assets/geguritan.png";
-import Footer from "../components/Footer";
-import NavbarComponent from "../components/Navbar";
+import GeguritanImage from "@/assets/geguritan.png";
+import Footer from "@/components/Footer";
+import NavbarComponent from "@/components/Navbar";
 
 const AnimateOnLoad = ({ children, className, delay = 0 }: { children: ReactNode, className?: string, delay?: number }) => (
   <div

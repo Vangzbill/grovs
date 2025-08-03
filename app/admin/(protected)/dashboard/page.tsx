@@ -1,8 +1,8 @@
 // app/admin/dashboard/page.tsx
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "../../../api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
-import { LogoutButton } from "../../../admin/(protected)/components/LogoutButton";
+import { LogoutButton } from "@/app/admin/(protected)/components/LogoutButton";
 
 export default async function DashboardPage() {
     const session = await getServerSession(authOptions);
