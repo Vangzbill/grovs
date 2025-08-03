@@ -86,7 +86,7 @@ export default function ModulAjarPage() {
                     <Button
                       color="primary"
                       variant="bordered"
-                      onClick={handlePrev}
+                      onPress={handlePrev}
                       isDisabled={currentModulIndex === 0}
                       startContent={<FaArrowLeft />}
                     >
@@ -94,7 +94,7 @@ export default function ModulAjarPage() {
                     </Button>
                     <Button
                       color="primary"
-                      onClick={handleNext}
+                      onPress={handleNext}
                       isDisabled={currentModulIndex === modulData.length - 1}
                       endContent={<FaArrowRight />}
                     >

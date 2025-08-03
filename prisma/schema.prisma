@@ -11,16 +11,19 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../app/generated/prisma"
+  // output   = "../app/generated/prisma"
 }
 
+// Model untuk Materi Pembelajaran
 model Materi {
   id        Int      @id @default(autoincrement())
   judul     String
-  deskripsi String
+  deskripsi String   @db.Text
+  fileUrl   String
   createdAt DateTime @default(now())
 }
 
+// Model untuk Modul PDF
 model Modul {
   id        Int      @id @default(autoincrement())
   judul     String
@@ -28,18 +31,29 @@ model Modul {
   createdAt DateTime @default(now())
 }
 
+// Model untuk Cerita Bergambar
 model Cerita {
   id        Int      @id @default(autoincrement())
   judul     String
-  isi       String
+  isi       String   @db.Text
   gambarUrl String?
   createdAt DateTime @default(now())
 }
 
+// Model untuk Antologi Geguritan
 model Geguritan {
   id        Int      @id @default(autoincrement())
   judul     String
-  isi       String
+  isi       String   @db.Text
   gambarUrl String?
+  createdAt DateTime @default(now())
+}
+
+// --- MODEL YANG DITAMBAHKAN ---
+// Model untuk otentikasi Admin
+model Admin {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String // Password ini akan disimpan dalam bentuk hash
   createdAt DateTime @default(now())
 }

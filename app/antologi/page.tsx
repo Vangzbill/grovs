@@ -84,7 +84,7 @@ export default function AntologiPage() {
                             <Button
                                 color="primary"
                                 variant="bordered"
-                                onClick={handlePrev}
+                                onPress={handlePrev}
                                 isDisabled={currentGeguritanIndex === 0}
                                 startContent={<FaArrowLeft />}
                             >
@@ -92,7 +92,7 @@ export default function AntologiPage() {
                             </Button>
                             <Button
                                 color="primary"
-                                onClick={handleNext}
+                                onPress={handleNext}
                                 isDisabled={currentGeguritanIndex === geguritanData.length - 1}
                                 endContent={<FaArrowRight />}
                             >

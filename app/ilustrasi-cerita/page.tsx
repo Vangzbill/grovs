@@ -87,7 +87,7 @@ export default function IlustrasiCeritaPage() {
                             <Button
                                 color="primary"
                                 variant="bordered"
-                                onClick={handlePrev}
+                                onPress={handlePrev}
                                 isDisabled={currentIlustrasiIndex === 0}
                                 startContent={<FaArrowLeft />}
                             >
@@ -95,7 +95,7 @@ export default function IlustrasiCeritaPage() {
                             </Button>
                             <Button
                                 color="primary"
-                                onClick={handleNext}
+                                onPress={handleNext}
                                 isDisabled={currentIlustrasiIndex === ilustrasiData.length - 1}
                                 endContent={<FaArrowRight />}
                             >

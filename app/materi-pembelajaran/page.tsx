@@ -86,7 +86,7 @@ export default function MateriPembelajaranPage() {
                                         <Button
                                             color="primary"
                                             variant="bordered"
-                                            onClick={handlePrev}
+                                            onPress={handlePrev}
                                             isDisabled={currentMateriIndex === 0}
                                             startContent={<FaArrowLeft />}
                                         >
@@ -94,7 +94,7 @@ export default function MateriPembelajaranPage() {
                                         </Button>
                                         <Button
                                             color="primary"
-                                            onClick={handleNext}
+                                            onPress={handleNext}
                                             isDisabled={currentMateriIndex === materiData.length - 1}
                                             endContent={<FaArrowRight />}
                                         >
