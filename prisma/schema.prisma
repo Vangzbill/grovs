@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+model Materi {
+  id        Int      @id @default(autoincrement())
+  judul     String
+  deskripsi String
+  createdAt DateTime @default(now())
+}
+
+model Modul {
+  id        Int      @id @default(autoincrement())
+  judul     String
+  fileUrl   String
+  createdAt DateTime @default(now())
+}
+
+model Cerita {
+  id        Int      @id @default(autoincrement())
+  judul     String
+  isi       String
+  gambarUrl String?
+  createdAt DateTime @default(now())
+}
+
+model Geguritan {
+  id        Int      @id @default(autoincrement())
+  judul     String
+  isi       String
+  gambarUrl String?
+  createdAt DateTime @default(now())
+}
