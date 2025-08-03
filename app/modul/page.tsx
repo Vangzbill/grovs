@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import { Card, CardBody, Button, Divider } from "@nextui-org/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import Footer from "@/components/Footer";
-import NavbarComponent from "@/components/Navbar";
-import EmptyState from "@/components/EmptyState";
+import NavbarComponent from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import EmptyState from "../../components/EmptyState";
 
 interface Modul {
   title: string;
