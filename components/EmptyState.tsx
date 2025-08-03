@@ -1,4 +1,4 @@
-// app/components/EmptyState.tsx
+
 import React from 'react';
 import { Card, CardBody, Button } from '@nextui-org/react';
 import { FaBookDead } from 'react-icons/fa';

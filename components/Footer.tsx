@@ -1,3 +1,4 @@
+"use client";
 import { Link } from "@nextui-org/react";
 
 const Footer = () => {

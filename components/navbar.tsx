@@ -3,9 +3,7 @@
 
 import React from 'react';
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from '@nextui-org/react';
-import { usePathname } from 'next/navigation'; // <-- Import hook untuk mendeteksi path
-
-// Definisikan item navigasi dalam sebuah array agar mudah dikelola
+import { usePathname } from 'next/navigation'; 
 const navLinks = [
   { name: 'Modul Ajar', href: '/modul' },
   { name: 'Materi Pembelajaran', href: '/materi-pembelajaran' },
@@ -13,7 +11,6 @@ const navLinks = [
   { name: 'Antologi Geguritan', href: '/antologi' },
 ];
 
-// Terima prop showCtaButton untuk menampilkan tombol Call to Action
 export default function NavbarComponent({ showCtaButton = false }: { showCtaButton?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname(); // <-- Dapatkan path URL saat ini
