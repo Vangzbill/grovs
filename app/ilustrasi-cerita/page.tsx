@@ -4,15 +4,15 @@
 import React, { useState } from "react";
 import { Button } from "@nextui-org/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import NavbarComponent from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import EmptyState from "@/components/EmptyState";
+import NavbarComponent from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import EmptyState from "../../components/EmptyState";
 
 const ilustrasiData = [
     {
         id: 1,
         title: "Cerita Sumanasantaka",
-        synopsis: "Sebuah cerita rakyat populer tentang kecerdikan seekor kancil yang harus menghadapi Pak Tani karena kenakalannya mencuri timun di kebun.",
+        synopsis: "Sebuah cerita rakyat populer Sang Raja dan Sayembara.",
         embedUrl: "https://online.pubhtml5.com/ugrgn/jtps/"
     },
 ];

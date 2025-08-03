@@ -1,9 +1,8 @@
-// app/admin/materi/page.tsx
-import prisma from '@/lib/prisma';
+import prisma from '../../../../lib/prisma';
 import { Button } from "@nextui-org/react";
 import Link from 'next/link';
 import { FaPlus } from 'react-icons/fa';
-import MateriTable from '@/app/admin/(protected)/components/MateriTable';
+import MateriTable from '../../../admin/(protected)/components/MateriTable';
 
 async function getMateri() {
     const materi = await prisma.materi.findMany({
