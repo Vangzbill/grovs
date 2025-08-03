@@ -11,8 +11,8 @@ import EmptyState from "../../components/EmptyState";
 const materiData = [
     {
         id: 1,
-        title: "Materi 1: Analisis Struktur Geguritan",
-        description: "Materi ini fokus pada cara menganalisis struktur fisik (tipografi, diksi, imaji) dan struktur batin (tema, rasa, nada, amanat) dari sebuah geguritan.",
+        title: "Materi 1: Geguritan",
+        description: "Materi ini fokus pada unsur-unsur dalam geguritan.",
         pdfUrl: "/modul-1.pdf"
     },
 ];

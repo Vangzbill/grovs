@@ -12,7 +12,7 @@ const ilustrasiData = [
     {
         id: 1,
         title: "Cerita Sumanasantaka",
-        synopsis: "Sebuah cerita rakyat populer tentang kecerdikan seekor kancil yang harus menghadapi Pak Tani karena kenakalannya mencuri timun di kebun.",
+        synopsis: "Sebuah cerita rakyat populer Sang Raja dan Sayembara.",
         embedUrl: "https://online.pubhtml5.com/ugrgn/jtps/"
     },
 ];
