@@ -1,10 +1,6 @@
-// app/layout.tsx
-
-import "@/styles/globals.css"; // <-- INI DIA KUNCINYA, BARIS INI WAJIB ADA
+import "@/styles/globals.css";
 import { Metadata } from "next";
 import { Providers } from "./providers";
-import GrovsNavbar from "@/components/Navbar"; // Pastikan path ini benar
-import Footer from "@/components/Footer";     // Pastikan path ini benar
 import { Poppins, Lora } from "next/font/google";
 import clsx from "clsx";
 
