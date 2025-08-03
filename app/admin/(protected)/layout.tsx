@@ -8,7 +8,7 @@ export default function AdminLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="flex h-screen bg-gray-100">
+        <div className="flex h-screen bg-white">
             {/* Sidebar akan tersembunyi di mobile, dan tampil di desktop */}
             <div className="hidden lg:flex lg:flex-shrink-0">
                 <Sidebar />

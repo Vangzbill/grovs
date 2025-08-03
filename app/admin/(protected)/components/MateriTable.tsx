@@ -4,6 +4,7 @@ import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button
 import Link from 'next/link';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import React from "react";
+import { deleteMateri } from '@/app/admin/(protected)/materi/actions';
 
 interface MateriItem {
     id: string | number;
@@ -38,16 +39,21 @@ export default function MateriTable({ dataMateri }: { dataMateri: MateriItem[] }
                         </TableCell>
                         <TableCell>
                             <div className="relative flex items-center gap-2">
-                                {/* <Tooltip content="Edit Materi">
+                                <Tooltip content="Edit Materi">
                                     <Button isIconOnly as={Link} href={`/admin/materi/edit/${item.id}`} size="sm" variant="light">
                                         <FaEdit className="text-lg text-default-500" />
                                     </Button>
-                                </Tooltip> */}
-                                <Tooltip color="danger" content="Hapus Materi">
-                                    <Button isIconOnly size="sm" variant="light">
-                                        <FaTrash className="text-lg text-danger" />
-                                    </Button>
                                 </Tooltip>
+                                <form action={() => deleteMateri(Number(item.id))}>
+                                    <Tooltip color="danger" content="Hapus Materi">
+                                        <Button
+                                            isIconOnly type="submit" size="sm" variant="light"
+                                            onClick={(e) => !confirm('Yakin ingin menghapus materi ini?') && e.preventDefault()}
+                                        >
+                                            <FaTrash className="text-lg text-danger" />
+                                        </Button>
+                                    </Tooltip>
+                                </form>
                             </div>
                         </TableCell>
                     </TableRow>

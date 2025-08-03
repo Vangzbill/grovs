@@ -1,111 +1,43 @@
-'use client';
-
-import React, { useState } from "react";
-import { Card, CardBody, Button, Divider } from "@nextui-org/react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import Footer from "@/components/Footer";
+import prisma from "@/lib/prisma";
 import NavbarComponent from "@/components/Navbar";
-import EmptyState from "@/components/EmptyState";
+import Footer from "@/components/Footer";
+import ModulViewer from "./ModulViewer";
 
-interface Modul {
-  title: string;
-  description: string;
-  pdfUrl: string;
+async function getModul() {
+  const modul = await prisma.modul.findMany({
+    orderBy: { createdAt: 'desc' },
+  });
+  return modul;
 }
 
-const modulData: Modul[] = [];
-
-export default function ModulAjarPage() {
-  if (modulData.length === 0) {
-    return (
-      <div className="flex flex-col min-h-screen">
-        <NavbarComponent />
-        <main className="flex-grow container mx-auto px-6 py-12">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-serif font-bold text-brand-dark">Modul Ajar Interaktif</h1>
-            <p className="text-lg text-gray-600 mt-2">Pilih dan pelajari modul geguritan secara mandiri.</p>
-          </div>
-          <EmptyState
-            title="Belum Ada Modul"
-            message="Koleksi modul ajar sedang kami siapkan. Mohon kunjungi kembali halaman ini nanti."
-          />
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  const [currentModulIndex, setCurrentModulIndex] = useState(0);
-
-  const handlePrev = () => {
-    setCurrentModulIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
-  };
-
-  const handleNext = () => {
-    setCurrentModulIndex((prevIndex) => (prevIndex < modulData.length - 1 ? prevIndex + 1 : prevIndex));
-  };
-
-  const currentModul = modulData[currentModulIndex];
+export default async function ModulAjarPage() {
+  const allModul = await getModul();
 
   return (
     <div className="flex flex-col min-h-screen">
       <NavbarComponent />
 
-      <main className="flex-grow container mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-serif font-bold text-brand-dark">Modul Ajar Interaktif</h1>
-          <p className="text-lg text-gray-600 mt-2">Pilih dan pelajari modul geguritan secara mandiri.</p>
+      <main className="flex-grow container mx-auto px-6 py-12 relative overflow-hidden">
+        <div className="absolute top-[10%] left-[5%] text-[80px] sm:text-[150px] lg:text-[200px] font-serif text-brand-blue-100 z-0 rotate-12">ꦒ</div>
+        <div className="absolute bottom-[15%] right-[5%] text-[100px] sm:text-[200px] lg:text-[300px] font-serif text-brand-blue-100 z-0 -rotate-12">ꦗ</div>
+        <div className="absolute top-[25%] right-[15%] text-[80px] sm:text-[180px] font-serif text-brand-blue-100 z-0">ꦱ</div>
+        <div className="absolute bottom-[10%] left-[10%] text-[70px] sm:text-[150px] font-serif text-brand-blue-100 z-0 rotate-45">ꦗ</div>
+        <div className="absolute top-[5%] right-[25%] text-[60px] sm:text-[100px] font-serif text-brand-blue-100 z-0 -rotate-45">ꦒ</div>
+        <div className="absolute top-[5%] left-[40%] text-[60px] sm:text-[100px] font-serif text-brand-blue-100 z-0">ꦚ</div>
+        <div className="absolute bottom-[0%] left-[50%] text-[80px] sm:text-[150px] font-serif text-brand-blue-100 z-0 -rotate-45">ꦧ</div>
+        <div className="absolute top-[0%] left-[10%] text-[80px] sm:text-[150px] font-serif text-brand-blue-100 z-0 -rotate-45">ꦧ</div>
+        <div className="absolute -top-10 -right-10 text-[180px] font-serif text-brand-blue-100 opacity-80 z-0 rotate-12">ꦱ</div>
+        <div className="absolute -bottom-20 -left-16 text-[250px] font-serif text-brand-blue-100 opacity-80 z-0 -rotate-12">ꦤ</div>
+
+        <div className="relative z-10 container mx-auto px-6 py-12">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-serif font-bold text-brand-dark">Modul Ajar Interaktif</h1>
+            <p className="text-lg text-gray-600 mt-2">Pilih dan pelajari modul geguritan secara mandiri.</p>
+          </div>
+
+          {/* Kirim data sebagai prop ke komponen klien */}
+          <ModulViewer initialData={allModul} />
         </div>
-
-        <Card className="shadow-2xl">
-          <CardBody>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4">
-              {/* Kolom Kiri: PDF Preview */}
-              <div className="w-full h-[600px] rounded-lg overflow-hidden border">
-                <iframe
-                  src={`${currentModul.pdfUrl}#view=fitH&navpanes=0`}
-                  width="100%"
-                  height="100%"
-                  title={currentModul.title}
-                />
-              </div>
-
-              {/* Kolom Kanan: Deskripsi dan Navigasi */}
-              <div className="flex flex-col justify-between">
-                <div>
-                  <h2 className="text-2xl font-bold font-serif text-brand-blue-700">{currentModul.title}</h2>
-                  <Divider className="my-4" />
-                  <p className="text-gray-700 leading-relaxed">{currentModul.description}</p>
-                </div>
-
-                <div className="mt-6">
-                  <p className="text-sm text-gray-500 mb-2">
-                    Modul {currentModulIndex + 1} dari {modulData.length}
-                  </p>
-                  <div className="flex gap-4">
-                    <Button
-                      color="primary"
-                      variant="bordered"
-                      onPress={handlePrev}
-                      isDisabled={currentModulIndex === 0}
-                      startContent={<FaArrowLeft />}
-                    >
-                      Sebelumnya
-                    </Button>
-                    <Button
-                      color="primary"
-                      onPress={handleNext}
-                      isDisabled={currentModulIndex === modulData.length - 1}
-                      endContent={<FaArrowRight />}
-                    >
-                      Selanjutnya
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardBody>
-        </Card>
       </main>
 
       <Footer />

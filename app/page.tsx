@@ -26,7 +26,6 @@ export default function PolishedLandingPage() {
           <section className="relative min-h-screen flex items-center px-6 lg:px-20 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-brand-blue-50 via-white to-brand-blue-100/30 z-0"></div>
             {/* Ornamen Aksara Jawa */}
-            {/* Ornamen Aksara Jawa */}
             <div className="absolute top-[10%] left-[5%] text-[80px] sm:text-[150px] lg:text-[200px] font-serif text-brand-blue-100 z-0 rotate-12">ꦒ</div>
             <div className="absolute bottom-[15%] right-[5%] text-[100px] sm:text-[200px] lg:text-[300px] font-serif text-brand-blue-100 z-0 -rotate-12">ꦗ</div>
             <div className="absolute top-[25%] right-[15%] text-[80px] sm:text-[180px] font-serif text-brand-blue-100 z-0">ꦱ</div>
@@ -34,7 +33,8 @@ export default function PolishedLandingPage() {
             <div className="absolute top-[5%] right-[25%] text-[60px] sm:text-[100px] font-serif text-brand-blue-100 z-0 -rotate-45">ꦒ</div>
             <div className="absolute top-[5%] left-[40%] text-[60px] sm:text-[100px] font-serif text-brand-blue-100 z-0">ꦚ</div>
             <div className="absolute bottom-[0%] left-[50%] text-[80px] sm:text-[150px] font-serif text-brand-blue-100 z-0 -rotate-45">ꦧ</div>
-
+            <div className="absolute -top-10 -right-10 text-[180px] font-serif text-brand-blue-100 opacity-80 z-0 rotate-12">ꦱ</div>
+            <div className="absolute -bottom-20 -left-16 text-[250px] font-serif text-brand-blue-100 opacity-80 z-0 -rotate-12">ꦤ</div>
 
             {/* Konten Hero */}
 
@@ -101,12 +101,17 @@ export default function PolishedLandingPage() {
           </section>
 
           {/* SECTION 3: KENAPA GROVS */}
-          <section id="kenapa-grovs" className="py-24 px-6 lg:px-20 bg-brand-light">
-            <div className="relative max-w-6xl mx-auto">
-              <div className="absolute bottom-0 left-10 text-[80px] font-serif text-brand-blue-100 opacity-20">ꦚ</div>
-
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <section id="kenapa-grovs" className="py-24 px-6 lg:px-20 bg-brand-light relative overflow-hidden">
+            <div className="absolute top-[10%] left-[5%] text-[80px] sm:text-[150px] lg:text-[200px] font-serif text-brand-blue-100 z-0 rotate-12">ꦒ</div>
+            <div className="absolute bottom-[15%] right-[5%] text-[100px] sm:text-[200px] lg:text-[300px] font-serif text-brand-blue-100 z-0 -rotate-12">ꦗ</div>
+            <div className="absolute top-[25%] right-[15%] text-[80px] sm:text-[180px] font-serif text-brand-blue-100 z-0">ꦱ</div>
+            <div className="absolute bottom-[10%] left-[10%] text-[70px] sm:text-[150px] font-serif text-brand-blue-100 z-0 rotate-45">ꦗ</div>
+            <div className="absolute top-[5%] right-[25%] text-[60px] sm:text-[100px] font-serif text-brand-blue-100 z-0 -rotate-45">ꦒ</div>
+            <div className="absolute top-[5%] left-[40%] text-[60px] sm:text-[100px] font-serif text-brand-blue-100 z-0">ꦚ</div>
+            <div className="absolute bottom-[0%] left-[50%] text-[80px] sm:text-[150px] font-serif text-brand-blue-100 z-0 -rotate-45">ꦧ</div>
+            <div className="absolute -top-10 -right-10 text-[180px] font-serif text-brand-blue-100 opacity-80 z-0 rotate-12">ꦱ</div>
+            <div className="absolute -bottom-20 -left-16 text-[250px] font-serif text-brand-blue-100 opacity-80 z-0 -rotate-12">ꦤ</div>
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="w-full">
                 <Image alt="Seseorang menulis puisi jawa" src="https://alif.id/storage/posts/WhatsApp-Image-2025-01-31-at-09.13.18.jpeg" className="rounded-xl shadow-lg" />
               </div>

@@ -18,7 +18,7 @@ export default function Sidebar() {
     const pathname = usePathname();
 
     return (
-        <div className="h-full w-64 bg-gray-50 border-r">
+        <div className="h-full w-64 bg-blue-100 border-r">
             <div className="p-4">
                 <h2 className="text-xl font-bold text-center">Admin Panel</h2>
             </div>
