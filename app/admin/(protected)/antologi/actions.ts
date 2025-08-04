@@ -71,7 +71,7 @@ export async function deleteGeguritan(id: number) {
     });
     revalidatePath('/admin/antologi');
     return { success: true };
-  } catch (error) {
+  } catch (_) {
     return { success: false, error: 'Gagal menghapus geguritan.' };
   }
 }

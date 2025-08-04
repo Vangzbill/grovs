@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
-import { Button, Card, CardBody, Divider, Image } from "@nextui-org/react";
+import { Button, Card, CardBody, Divider } from "@nextui-org/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import EmptyState from "@/components/EmptyState";
 
@@ -13,15 +13,6 @@ interface Geguritan {
 }
 
 export default function GeguritanViewer({ initialData }: { initialData: Geguritan[] }) {
-    if (!initialData || initialData.length === 0) {
-        return (
-            <EmptyState
-                title="Belum Ada Geguritan"
-                message="Koleksi geguritan sedang kami siapkan. Mohon kunjungi kembali halaman ini nanti."
-            />
-        );
-    }
-
     const [currentGeguritanIndex, setCurrentGeguritanIndex] = useState(0);
 
     const handlePrev = () => {
@@ -33,6 +24,15 @@ export default function GeguritanViewer({ initialData }: { initialData: Gegurita
     };
 
     const currentGeguritan = initialData[currentGeguritanIndex];
+
+    if (!initialData || initialData.length === 0) {
+        return (
+            <EmptyState
+                title="Belum Ada Geguritan"
+                message="Koleksi geguritan sedang kami siapkan. Mohon kunjungi kembali halaman ini nanti."
+            />
+        );
+    }
 
     return (
         <div className="flex flex-col items-center gap-8">

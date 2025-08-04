@@ -1,5 +1,3 @@
-import { Link } from "@nextui-org/react";
-
 const Footer = () => {
   return (
     <footer className="w-full flex items-center justify-center py-6 border-t">

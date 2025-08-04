@@ -17,15 +17,6 @@ interface CeritaViewerProps {
 }
 
 export default function CeritaViewer({ initialData }: CeritaViewerProps) {
-    if (!initialData || initialData.length === 0) {
-        return (
-            <EmptyState
-                title="Belum Ada Ilustrasi"
-                message="Koleksi ilustrasi cerita sedang kami siapkan. Mohon kunjungi kembali halaman ini nanti."
-            />
-        );
-    }
-
     const [currentIlustrasiIndex, setCurrentIlustrasiIndex] = useState(0);
 
     const handlePrev = () => {
@@ -38,6 +29,14 @@ export default function CeritaViewer({ initialData }: CeritaViewerProps) {
 
     const currentIlustrasi = initialData[currentIlustrasiIndex];
 
+    if (!initialData || initialData.length === 0) {
+        return (
+            <EmptyState
+                title="Belum Ada Ilustrasi"
+                message="Koleksi ilustrasi cerita sedang kami siapkan. Mohon kunjungi kembali halaman ini nanti."
+            />
+        );
+    }
     return (
         <div className="flex flex-col items-center gap-8">
             <div className="text-center max-w-3xl">

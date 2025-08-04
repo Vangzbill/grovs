@@ -1,6 +1,6 @@
 'use client';
 
-import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button, Tooltip, Link, Image } from "@nextui-org/react";
+import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button, Tooltip, Link } from "@nextui-org/react";
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import React from "react";
 import { deleteCerita } from '@/app/admin/(protected)/ilustrasi-cerita/actions';

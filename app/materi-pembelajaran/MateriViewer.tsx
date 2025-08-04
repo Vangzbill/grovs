@@ -16,16 +16,6 @@ interface MateriViewerProps {
 }
 
 export default function MateriViewer({ initialData }: MateriViewerProps) {
-
-    if (!initialData || initialData.length === 0) {
-        return (
-            <EmptyState
-                title="Belum Ada Materi"
-                message="Koleksi materi pembelajaran sedang kami siapkan. Mohon kunjungi kembali halaman ini nanti."
-            />
-        );
-    }
-
     const [currentMateriIndex, setCurrentMateriIndex] = useState(0);
 
     const handlePrev = () => {
@@ -37,6 +27,15 @@ export default function MateriViewer({ initialData }: MateriViewerProps) {
     };
 
     const currentMateri = initialData[currentMateriIndex];
+
+    if (!initialData || initialData.length === 0) {
+        return (
+            <EmptyState
+                title="Belum Ada Materi"
+                message="Koleksi materi pembelajaran sedang kami siapkan. Mohon kunjungi kembali halaman ini nanti."
+            />
+        );
+    }
 
     return (
         <Card className="shadow-2xl">

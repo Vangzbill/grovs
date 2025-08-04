@@ -50,7 +50,7 @@ export async function deleteCerita(id: number) {
     });
     revalidatePath('/admin/ilustrasi-cerita');
     return { success: true };
-  } catch (error) {
+  } catch (_) {
     return { success: false, error: 'Gagal menghapus cerita.' };
   }
 }

@@ -15,15 +15,6 @@ interface ModulViewerProps {
 }
 
 export default function ModulViewer({ initialData }: ModulViewerProps) {
-    if (!initialData || initialData.length === 0) {
-        return (
-            <EmptyState
-                title="Belum Ada Modul"
-                message="Koleksi modul ajar sedang kami siapkan. Mohon kunjungi kembali halaman ini nanti."
-            />
-        );
-    }
-
     const [currentModulIndex, setCurrentModulIndex] = useState(0);
 
     const handlePrev = () => {
@@ -35,6 +26,15 @@ export default function ModulViewer({ initialData }: ModulViewerProps) {
     };
 
     const currentModul = initialData[currentModulIndex];
+
+    if (!initialData || initialData.length === 0) {
+        return (
+            <EmptyState
+                title="Belum Ada Modul"
+                message="Koleksi modul ajar sedang kami siapkan. Mohon kunjungi kembali halaman ini nanti."
+            />
+        );
+    }
 
     return (
         <Card className="shadow-2xl">
