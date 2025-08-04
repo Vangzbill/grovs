@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import NavbarComponent from "@/components/Navbar";
+import NavbarComponent from "@/components/navbar";
 import Footer from "@/components/Footer";
 import MateriViewer from "./MateriViewer";
 
