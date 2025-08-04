@@ -17,7 +17,7 @@ export default function LoginPage() {
 
     try {
       const result = await signIn('credentials', {
-        redirect: false, 
+        redirect: false,
         email,
         password,
       });
@@ -27,7 +27,7 @@ export default function LoginPage() {
       } else if (result?.ok) {
         router.push('/admin/dashboard');
       }
-    } catch (error) {
+    } catch {
       setError('Terjadi kesalahan. Silakan coba lagi.');
     }
   };

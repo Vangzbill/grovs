@@ -64,7 +64,7 @@ export async function deleteModul(id: number) {
     });
     revalidatePath('/admin/modul');
     return { success: true };
-  } catch (_) {
+  } catch {
     return { success: false, error: 'Gagal menghapus modul.' };
   }
 }

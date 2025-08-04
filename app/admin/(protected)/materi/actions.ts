@@ -72,7 +72,7 @@ export async function deleteMateri(id: number) {
     });
     revalidatePath('/admin/materi');
     return { success: true };
-  } catch (_) {
+  } catch {
     return { success: false, error: 'Gagal menghapus materi.' };
   }
 }
