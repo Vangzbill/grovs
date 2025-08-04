@@ -144,16 +144,20 @@ const FeatureCard = ({
   title: string;
   href: string;
 }) => (
-  <Link href={href} className="block">
-    <Card className="p-1 group bg-gradient-to-br from-brand-blue-200 to-brand-blue-400 shadow-lg cursor-pointer" shadow="none" isPressable>
-      <CardBody className="bg-white rounded-lg p-8 text-center transform group-hover:-translate-y-2 transition-transform duration-300">
-        <div className="w-16 h-16 flex items-center justify-center bg-brand-blue-100 text-brand-blue-600 rounded-full mb-4 mx-auto">
-          {React.cloneElement(icon as React.ReactElement, { size: 30 })}
-        </div>
-        <h3 className="text-xl font-bold text-brand-dark">{title}</h3>
-      </CardBody>
-    </Card>
-  </Link>
+  <Card
+    as={Link}
+    href={href}
+    isPressable
+    className="p-1 group bg-gradient-to-br from-brand-blue-200 to-brand-blue-400 shadow-lg h-full"
+    shadow="none"
+  >
+    <CardBody className="bg-white rounded-lg p-8 text-center transform group-hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center justify-center">
+      <div className="w-16 h-16 flex items-center justify-center bg-brand-blue-100 text-brand-blue-600 rounded-full mb-4 flex-shrink-0">
+        {React.cloneElement(icon as React.ReactElement, { size: 30 })}
+      </div>
+      <h3 className="text-xl font-bold text-brand-dark">{title}</h3>
+    </CardBody>
+  </Card>
 );
 
 const BenefitItem = ({ text }: { text: string }) => (
