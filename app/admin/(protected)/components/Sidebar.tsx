@@ -9,8 +9,8 @@ import { FaTachometerAlt, FaBook, FaBookOpen, FaImage, FaFeatherAlt } from 'reac
 const sidebarItems = [
     { key: 'dashboard', href: '/admin/dashboard', label: 'Dashboard', icon: <FaTachometerAlt /> },
     { key: 'modul', href: '/admin/modul', label: 'Modul Ajar', icon: <FaBook /> },
-    { key: 'materi', href: '/admin/materi', label: 'Materi Pembelajaran', icon: <FaBookOpen /> },
     { key: 'cerita', href: '/admin/ilustrasi-cerita', label: 'Ilustrasi Cerita', icon: <FaImage /> },
+    { key: 'materi', href: '/admin/materi', label: 'Materi Pembelajaran', icon: <FaBookOpen /> },
     { key: 'geguritan', href: '/admin/antologi', label: 'Antologi Geguritan', icon: <FaFeatherAlt /> },
 ];
 
