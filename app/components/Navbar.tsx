@@ -6,8 +6,8 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMen
 import { usePathname } from 'next/navigation';
 const navLinks = [
   { name: 'Modul Ajar', href: '/modul' },
-  { name: 'Materi Pembelajaran', href: '/materi-pembelajaran' },
   { name: 'Ilustrasi Cerita', href: '/ilustrasi-cerita' },
+  { name: 'Materi Pembelajaran', href: '/materi-pembelajaran' },
   { name: 'Antologi Geguritan', href: '/antologi' },
 ];
 

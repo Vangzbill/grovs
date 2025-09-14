@@ -94,13 +94,13 @@ export default function PolishedLandingPage() {
             </div>
             <div className="mt-16 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               <FeatureCard icon={<FaBookOpen />} title="Modul Ajar yang Terstruktur" href="/modul" />
-              <FeatureCard icon={<FaLightbulb />} title="Materi Pembelajaran Mendalam" href="/materi-pembelajaran" />
               <FeatureCard icon={<FaChalkboardTeacher />} title="Ilustrasi Cerita Inspiratif" href="/ilustrasi-cerita" />
+              <FeatureCard icon={<FaLightbulb />} title="Materi Pembelajaran Mendalam" href="/materi-pembelajaran" />
               <FeatureCard icon={<FaFeatherAlt />} title="Antologi Karya Geguritan" href="/antologi" />
             </div>
           </section>
 
-          {/* SECTION 3: KENAPA GROVS */}
+          {/* SECTION 3: KENAPA GATHOT */}
           <section id="kenapa-grovs" className="py-24 px-6 lg:px-20 bg-brand-light relative overflow-hidden">
             <div className="absolute top-[10%] left-[5%] text-[80px] sm:text-[150px] lg:text-[200px] font-serif text-brand-blue-100 z-0 rotate-12">ꦒ</div>
             <div className="absolute bottom-[15%] right-[5%] text-[100px] sm:text-[200px] lg:text-[300px] font-serif text-brand-blue-100 z-0 -rotate-12">ꦗ</div>

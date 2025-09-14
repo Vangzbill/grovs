@@ -2,6 +2,7 @@ import prisma from "@/lib/prisma";
 import NavbarComponent from "@/components/navbar";
 import Footer from "@/components/Footer";
 import GeguritanViewer from "./GeguritanViewer";
+export const dynamic = 'force-dynamic';
 
 async function getGeguritan() {
     const geguritan = await prisma.geguritan.findMany({

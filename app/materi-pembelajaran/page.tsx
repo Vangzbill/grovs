@@ -2,6 +2,7 @@ import prisma from "@/lib/prisma";
 import NavbarComponent from "@/components/navbar";
 import Footer from "@/components/Footer";
 import MateriViewer from "./MateriViewer";
+export const dynamic = 'force-dynamic';
 
 async function getMateri() {
     const materi = await prisma.materi.findMany({

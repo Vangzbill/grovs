@@ -2,6 +2,7 @@ import prisma from "@/lib/prisma";
 import NavbarComponent from "@/components/navbar";
 import Footer from "@/components/Footer";
 import ModulViewer from "./ModulViewer";
+export const dynamic = 'force-dynamic';
 
 async function getModul() {
   const modul = await prisma.modul.findMany({

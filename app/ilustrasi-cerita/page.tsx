@@ -2,6 +2,7 @@ import prisma from "@/lib/prisma";
 import NavbarComponent from "@/components/navbar";
 import Footer from "@/components/Footer";
 import CeritaViewer from "./CeritaViewer";
+export const dynamic = 'force-dynamic';
 
 async function getCerita() {
     const cerita = await prisma.cerita.findMany({
