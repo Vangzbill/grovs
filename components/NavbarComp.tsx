@@ -23,7 +23,7 @@ export default function NavbarComponent({ showCtaButton = false }: { showCtaButt
                 />
                 <NavbarBrand>
                     <Link href="/" color="foreground" className="font-bold text-inherit text-xl">
-                        GROVS
+                        GATHOT
                     </Link>
                 </NavbarBrand>
             </NavbarContent>
