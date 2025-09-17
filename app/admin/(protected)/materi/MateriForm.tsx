@@ -18,7 +18,7 @@ function SubmitButton({ isEditing }: { isEditing: boolean }) {
 interface Materi {
     id: string;
     judul: string;
-    deskripsi: string;
+    deskripsi?: string;
     fileUrl?: string;
     kategori: string;
 }
