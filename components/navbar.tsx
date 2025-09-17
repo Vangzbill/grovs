@@ -7,13 +7,14 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
   { name: 'Modul Ajar', href: '/modul' },
   { name: 'Ilustrasi Cerita', href: '/ilustrasi-cerita' },
-  { name: 'Materi Pembelajaran', href: '/materi-pembelajaran' },
+  { name: 'Pasinaon', href: '/materi-pembelajaran' },
+  { name: 'Karya', href: '/karya' },
   { name: 'Antologi Geguritan', href: '/antologi' },
 ];
 
 export default function NavbarComponent({ showCtaButton = false }: { showCtaButton?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const pathname = usePathname(); // <-- Dapatkan path URL saat ini
+  const pathname = usePathname(); 
 
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen} isBordered isBlurred className="bg-white/70">

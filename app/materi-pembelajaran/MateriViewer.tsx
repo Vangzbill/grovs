@@ -5,10 +5,11 @@ import { Card, CardBody, Button, Divider } from "@nextui-org/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import EmptyState from "@/components/EmptyState";
 
-type Materi = {
+export type Materi = {
     judul: string;
     deskripsi: string;
     fileUrl: string;
+    kategori: string;
 };
 
 interface MateriViewerProps {
@@ -32,7 +33,7 @@ export default function MateriViewer({ initialData }: MateriViewerProps) {
         return (
             <EmptyState
                 title="Belum Ada Materi"
-                message="Koleksi materi pembelajaran sedang kami siapkan. Mohon kunjungi kembali halaman ini nanti."
+                message="Tidak ada materi yang tersedia untuk kategori ini. Silakan pilih kategori yang lain."
             />
         );
     }
@@ -41,46 +42,36 @@ export default function MateriViewer({ initialData }: MateriViewerProps) {
         <Card className="shadow-2xl">
             <CardBody>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4">
-                    <div className="w-full h-[600px] rounded-lg overflow-hidden border">
-                        <iframe
-                            src={`${currentMateri.fileUrl}#view=fitH&navpanes=0`}
-                            width="100%"
-                            height="100%"
-                            title={currentMateri.judul}
-                        />
+                    <div className="w-full h-[600px] rounded-lg overflow-hidden border flex items-center justify-center bg-gray-50">
+                        {/* --- PERUBAHAN DI SINI --- */}
+                        {/* Tampilkan iframe HANYA jika fileUrl ada */}
+                        {currentMateri.fileUrl ? (
+                            <iframe
+                                src={`${currentMateri.fileUrl}#view=fitH&navpanes=0`}
+                                width="100%"
+                                height="100%"
+                                title={currentMateri.judul}
+                            />
+                        ) : (
+                            // Tampilkan pesan jika fileUrl tidak ada (null)
+                            <div className="text-center text-gray-500">
+                                <p className="font-semibold">Pratinjau Tidak Tersedia</p>
+                                <p className="text-sm">File untuk materi ini belum diunggah.</p>
+                            </div>
+                        )}
                     </div>
 
                     <div className="flex flex-col justify-between">
                         <div>
                             <h2 className="text-2xl font-bold font-serif text-brand-blue-700">{currentMateri.judul}</h2>
                             <Divider className="my-4" />
-                            <p className="text-gray-700 leading-relaxed">{currentMateri.deskripsi}</p>
-                        </div>
-
-                        <div className="mt-6">
-                            <p className="text-sm text-gray-500 mb-2">
-                                Materi {currentMateriIndex + 1} dari {initialData.length}
+                            {/* --- PERUBAHAN DI SINI --- */}
+                            {/* Beri fallback jika deskripsi tidak ada (null) */}
+                            <p className="text-gray-700 leading-relaxed">
+                                {currentMateri.deskripsi ?? 'Deskripsi untuk materi ini belum tersedia.'}
                             </p>
-                            <div className="flex gap-4">
-                                <Button
-                                    color="primary"
-                                    variant="bordered"
-                                    onPress={handlePrev}
-                                    isDisabled={currentMateriIndex === 0}
-                                    startContent={<FaArrowLeft />}
-                                >
-                                    Sebelumnya
-                                </Button>
-                                <Button
-                                    color="primary"
-                                    onPress={handleNext}
-                                    isDisabled={currentMateriIndex === initialData.length - 1}
-                                    endContent={<FaArrowRight />}
-                                >
-                                    Selanjutnya
-                                </Button>
-                            </div>
                         </div>
+                        {/* ... sisa komponen ... */}
                     </div>
                 </div>
             </CardBody>
