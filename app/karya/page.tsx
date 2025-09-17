@@ -5,33 +5,33 @@ import EmptyState from "@/components/EmptyState";
 
 export const dynamic = 'force-dynamic';
 
-async function getKaryaData(): Promise<[]> {
-    const sheetId = "1t7EPR6Q76QZTqhJPJJdDGSUkLX8TShIe7JTUenVaM1o";
-    const gid = "1824907618";
-    const csvUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${gid}`;
+// async function getKaryaData(): Promise<[]> {
+//     const sheetId = "1t7EPR6Q76QZTqhJPJJdDGSUkLX8TShIe7JTUenVaM1o";
+//     const gid = "1824907618";
+//     const csvUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${gid}`;
 
-    try {
-        const response = await fetch(csvUrl, { next: { revalidate: 10 } });
-        if (!response.ok) throw new Error(`Gagal memuat data: ${response.statusText}`);
+//     try {
+//         const response = await fetch(csvUrl, { next: { revalidate: 10 } });
+//         if (!response.ok) throw new Error(`Gagal memuat data: ${response.statusText}`);
 
-        const csvText = await response.text();
-        if (csvText.startsWith("<!DOCTYPE html>")) {
-            console.warn("Akses ke Google Sheet ditolak.");
-            return [];
-        }
+//         const csvText = await response.text();
+//         if (csvText.startsWith("<!DOCTYPE html>")) {
+//             console.warn("Akses ke Google Sheet ditolak.");
+//             return [];
+//         }
 
-        const parsedData = Papa.parse(csvText, {
-            header: true,
-            skipEmptyLines: true,
-        });
+//         const parsedData = Papa.parse(csvText, {
+//             header: true,
+//             skipEmptyLines: true,
+//         });
 
-        if (parsedData.errors.length > 0) return [];
-        return parsedData.data as [];
-    } catch (error) {
-        console.error("Error saat mengambil data karya:", error);
-        return [];
-    }
-}
+//         if (parsedData.errors.length > 0) return [];
+//         return parsedData.data as [];
+//     } catch (error) {
+//         console.error("Error saat mengambil data karya:", error);
+//         return [];
+//     }
+// }
 
 
 export default async function KaryaPage() {

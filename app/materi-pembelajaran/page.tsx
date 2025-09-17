@@ -17,12 +17,17 @@ async function getMateri() {
 export default async function MateriPembelajaranPage({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
 
     const selectedCategory = searchParams?.kategori as string | undefined;
-    const allMateri: Materi[] = await getMateri();
+    const allMateri = await getMateri();
 
     const uniqueCategories = [...new Set(allMateri.map(m => m.kategori))];
 
     const filteredMateri = selectedCategory
         ? allMateri.filter(m => m.kategori === selectedCategory)
+            .map(m => ({
+                ...m,
+                deskripsi: m.deskripsi || '',
+                fileUrl: m.fileUrl || ''
+            }))
         : [];
 
     return (
