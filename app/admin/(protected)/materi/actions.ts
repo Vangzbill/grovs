@@ -21,10 +21,11 @@ async function saveFile(file: File) {
 export async function createMateri(formData: FormData) {
   const judul = formData.get('judul') as string;
   const deskripsi = formData.get('deskripsi') as string;
+  const kategori = formData.get('kategori') as string;
   const file = formData.get('file') as File;
 
-  if (!judul || !deskripsi || !file || file.size === 0) {
-    return { error: 'Judul, deskripsi, dan file wajib diisi.' };
+  if (!judul || !deskripsi || !kategori || !file || file.size === 0) {
+    return { error: 'Judul, deskripsi, kategori, dan file wajib diisi.' };
   }
 
   const fileUrl = await saveFile(file);
@@ -33,6 +34,7 @@ export async function createMateri(formData: FormData) {
     data: {
       judul,
       deskripsi,
+      kategori,
       fileUrl,
     },
   });

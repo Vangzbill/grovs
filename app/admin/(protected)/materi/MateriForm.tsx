@@ -20,6 +20,7 @@ interface Materi {
     judul: string;
     deskripsi: string;
     fileUrl?: string;
+    kategori: string;
 }
 
 export default function MateriForm({ materi }: { materi?: Materi }) {
@@ -47,6 +48,7 @@ export default function MateriForm({ materi }: { materi?: Materi }) {
         <form action={formAction} className="flex flex-col gap-6">
             <Input name="judul" label="Judul Materi" defaultValue={materi?.judul} isRequired />
             <Textarea name="deskripsi" label="Deskripsi" defaultValue={materi?.deskripsi} isRequired minRows={10} />
+            <Input name="kategori" label="Kategori" defaultValue={materi?.kategori} isRequired />
 
             <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">File PDF (Maks 2MB)</label>
