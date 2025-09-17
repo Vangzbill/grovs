@@ -47,7 +47,7 @@ export default function MateriForm({ materi }: { materi?: Materi }) {
     return (
         <form action={formAction} className="flex flex-col gap-6">
             <Input name="judul" label="Judul Materi" defaultValue={materi?.judul} isRequired />
-            <Textarea name="deskripsi" label="Deskripsi" defaultValue={materi?.deskripsi} isRequired minRows={10} />
+            <Textarea name="deskripsi" label="Deskripsi" defaultValue={materi?.deskripsi ?? ''} isRequired minRows={10} />
             <Input name="kategori" label="Kategori" defaultValue={materi?.kategori} isRequired />
 
             <div>
