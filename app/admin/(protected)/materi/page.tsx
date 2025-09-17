@@ -9,7 +9,11 @@ async function getMateri() {
     const materi = await prisma.materi.findMany({
         orderBy: { createdAt: 'desc' },
     });
-    return materi;
+    return materi.map(item => ({
+        ...item,
+        deskripsi: item.deskripsi || '',
+        fileUrl: item.fileUrl || ''
+    }));
 }
 
 export default async function MateriAdminPage() {
