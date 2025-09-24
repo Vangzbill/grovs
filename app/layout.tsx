@@ -17,7 +17,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Geguritan Adedhasar Trus Story Of Trenggalek (GATHOT)",
+  title: "Geguritan Adedhasar True Story Of Trenggalek (GATHOT)",
   description: "Platform pembelajaran Geguritan berbasis nilai luhur.",
 };
 

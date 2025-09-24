@@ -51,7 +51,7 @@ export default function PolishedLandingPage() {
                 </AnimateOnLoad>
                 <AnimateOnLoad delay={0.2}>
                   <p className="mt-6 text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
-                    Geguritan Adedhasar Trus Story Of Trenggalek (GATHOT) adalah gerbang Anda menuju kekayaan sastra Jawa. Belajar geguritan dengan metode modern, materi mendalam, dan komunitas yang suportif.
+                    Geguritan Adedhasar True Story Of Trenggalek (GATHOT) adalah gerbang Anda menuju kekayaan sastra Jawa. Belajar geguritan dengan metode modern, materi mendalam, dan komunitas yang suportif.
                   </p>
                 </AnimateOnLoad>
                 <AnimateOnLoad delay={0.4}>
@@ -117,7 +117,7 @@ export default function PolishedLandingPage() {
               </div>
               <div>
                 <h2 className="font-serif text-4xl font-bold text-brand-dark">Bukan Sekadar Belajar, Tapi Menghayati.</h2>
-                <p className="mt-4 text-lg text-gray-600">Geguritan Adedhasar Trus Story Of Trenggalek (GATHOT) dirancang untuk memberikan pengalaman belajar yang imersif dan bermakna.</p>
+                <p className="mt-4 text-lg text-gray-600">Geguritan Adedhasar True Story Of Trenggalek (GATHOT) dirancang untuk memberikan pengalaman belajar yang imersif dan bermakna.</p>
                 <ul className="mt-8 space-y-4">
                   <BenefitItem text="Kurikulum berbasis nilai-nilai luhur." />
                   <BenefitItem text="Metode pembelajaran interaktif dan modern." />
